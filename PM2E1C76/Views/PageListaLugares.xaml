@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E1C76.Views.PageListaLugares">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#17A589" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="15" />
+                <Setter Property="Padding" Value="15" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="Margin" Value="15"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="listaLugares"
+                        SelectionMode="Single"
+                        SelectionChanged="listaSitios_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" 
+                                       ItemSpacing="15">
+                    </LinearItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Descripcion}" FontSize="Large"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button x:Name="btnEliminar" Text="Eliminar" Clicked="btnEliminar_Clicked"/>
+            <Button x:Name="btnMapa" Text="Mapa" Clicked="btnMapa_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
